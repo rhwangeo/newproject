@@ -1,0 +1,20 @@
+# services:
+  # db:
+  #   image: mysql:8.0
+  #   container_name: mysql_db
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_DATABASE: mydatabase
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - db_data:/var/lib/mysql
+
+services:
+  fastapi_app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
