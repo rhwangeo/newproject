@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: GitHub Actions Demo
+run-name: GitHub Actions Demo(run-name)
 
 # 觸發此 action 的時機
 on:
