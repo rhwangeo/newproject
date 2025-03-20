@@ -9,8 +9,10 @@ app = FastAPI()
 
 # 設定絕對路徑，確保 FastAPI 可以找到正確的目錄
 BASE_DIR = Path(__file__).resolve().parent.parent  # 取得 sideproject/ 的絕對路徑
-TEMPLATES_DIR = BASE_DIR / "frontend" / "templates"
-STATIC_DIR = BASE_DIR / "frontend" / "static"
+TEMPLATES_DIR = BASE_DIR / "public"
+STATIC_DIR = BASE_DIR / "public"
+# TEMPLATES_DIR = BASE_DIR / "frontend" / "templates"
+# STATIC_DIR = BASE_DIR / "frontend" / "static"
 
 # 掛載靜態檔案 (讓 CSS 和 JS 可被訪問)
 app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
