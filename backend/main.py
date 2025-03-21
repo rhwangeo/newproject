@@ -4,8 +4,22 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
 from pathlib import Path
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+origins = [
+    "https://googuge.firebaseapp.com/",  # Firebase 前端地址
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # 允許 Firebase 前端的域名
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # 設定絕對路徑，確保 FastAPI 可以找到正確的目錄
 BASE_DIR = Path(__file__).resolve().parent.parent  # 取得 sideproject/ 的絕對路徑

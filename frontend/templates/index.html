@@ -23,9 +23,9 @@
                 alert("請輸入名稱！");
                 return;
             }
-
+// http://127.0.0.1:8000/
             try {
-                const response = await fetch("http://127.0.0.1:8000/greet/", {
+                const response = await fetch("https://54.161.157.71/greet/", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
