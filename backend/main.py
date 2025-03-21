@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "https://googuge.firebaseapp.com/",  # Firebase 前端地址
+    "https://googuge.firebaseapp.com",  # Firebase 前端地址
 ]
 
 app.add_middleware(
