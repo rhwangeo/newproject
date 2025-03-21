@@ -2,7 +2,7 @@
 FROM python:3.12
 
 # 設定工作目錄 -在容器內建立 /app 目錄，並將它設為當前工作目錄。之後的所有指令都會在這個目錄內執行。
-WORKDIR /app
+WORKDIR /backend
 
 # 複製 requirements.txt 檔案到容器，將本機專案的 requirements.txt 複製到容器的 /app 目錄下。
 COPY requirements.txt .
