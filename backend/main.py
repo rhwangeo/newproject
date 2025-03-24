@@ -18,7 +18,7 @@ origins = [
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 允許 Firebase 前端的域名
+    allow_origins=origins,  # 允許 Firebase 前端的域名
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
