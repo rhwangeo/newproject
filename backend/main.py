@@ -9,7 +9,8 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "https://googuge.firebaseapp.com",
+    "https://googuge.firebaseapp.com/",
+    "https://googuge.web.app/",
     "http://localhost:5000",  # 允許本地測試
     "http://127.0.0.1:5000",
     "http://54.161.157.71:8000",  # 允許 EC2 直接訪問
