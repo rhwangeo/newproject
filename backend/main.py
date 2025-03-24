@@ -9,7 +9,10 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 origins = [
-    "https://googuge.firebaseapp.com",  # Firebase 前端地址
+    "https://googuge.firebaseapp.com",
+    "http://localhost:5000",  # 允許本地測試
+    "http://127.0.0.1:5000",
+    "http://54.161.157.71:8000",  # 允許 EC2 直接訪問
 ]
 
 app.add_middleware(
@@ -41,6 +44,6 @@ class InputData(BaseModel):
 def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-@app.post("/greet/")
+@app.post("/greet")
 def greet(data: InputData):
     return {"message": f"Hello, {data.name}!"}
