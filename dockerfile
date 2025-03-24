@@ -12,7 +12,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 複製專案檔案到容器,將本機的所有檔案（包含 FastAPI 程式碼）複製到容器內的 /backend 目錄。確保容器內部有完整的專案程式碼。
-COPY ./backend /app
+COPY . /app
 
 # 啟動 FastAPI 應用
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
