@@ -16,6 +16,7 @@ origins = [
     "http://54.161.157.71:8000",  # 允許 EC2 直接訪問
     "https://www.googuge.org/",
     "https://googuge.org/"
+    "https://newproject-aoj.pages.dev"
 ]
 
 app.add_middleware(
