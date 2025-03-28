@@ -15,7 +15,7 @@ origins = [
     "http://127.0.0.1:5000",
     "http://54.161.157.71:8000",  # 允許 EC2 直接訪問
     "https://www.googuge.org/",
-    "https://googuge.org/"
+    "https://googuge.org/",
     "https://newproject-aoj.pages.dev"
 ]
 
@@ -49,5 +49,5 @@ def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/greet")
-def greet(data: InputData):
+async def greet(data: InputData):
     return {"message": f"Hello, {data.name}!"}
